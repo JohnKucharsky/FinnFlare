@@ -18,7 +18,7 @@ export default function ProductDetails({ client, handleAdd, cart }) {
       setProduct(items);
     }
     getProduct();
-  }, []);
+  }, [client]);
 
   let images = [];
 

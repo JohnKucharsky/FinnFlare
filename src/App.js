@@ -55,7 +55,7 @@ function App() {
       setProducts(res.items);
     }
     getProducts();
-  }, []);
+  }, [client]);
   return (
     <div>
       <BrowserRouter>
