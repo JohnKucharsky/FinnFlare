@@ -18,7 +18,7 @@ export default function ProductDetails({ client, handleAdd, cart }) {
       setProduct(items);
     }
     getProduct();
-  }, [client, id]);
+  });
 
   let images = [];
 
@@ -47,11 +47,12 @@ export default function ProductDetails({ client, handleAdd, cart }) {
         "
         >
           <div className="grid gap-1 grid-cols-2 ">
-            {images.map((item) => (
-              <div className=" " key={item.sys.id}>
-                <img className="w-full" src={item.fields.file.url} alt="" />
-              </div>
-            ))}
+            {images &&
+              images.map((item) => (
+                <div className=" " key={item.sys.id}>
+                  <img className="w-full" src={item.fields.file.url} alt="" />
+                </div>
+              ))}
           </div>
         </div>
         <div className="pr-3">
@@ -90,7 +91,7 @@ export default function ProductDetails({ client, handleAdd, cart }) {
           onClick={nextSlide}
           className="z-10 hover:scale-110 text-5xl  opacity-60  absolute top-1/2 right-5 "
         />
-        {product &&
+        {images &&
           images.map((i) => (
             <div className="px-20" key={i.sys.id}>
               {idimages[current] === i.fields.file.url && (
