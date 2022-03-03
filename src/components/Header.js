@@ -43,7 +43,7 @@ export default function Header({ cart }) {
   };
   useEffect(() => {
     setTimeout(nextSlide, 3000);
-  }, []);
+  }, [nextSlide]);
 
   return (
     <div>
